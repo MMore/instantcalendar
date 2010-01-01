@@ -32,7 +32,14 @@
 									<td colspan="<%= padding %>" class="pad">&nbsp;</td>
 								<%end%>
               	<%1.upto(n) do |i|%>
-									<%if highlight_today and today?(i)%>
+								  <% if highlight_class.has_key?(i) %>
+								    <%url = dates[i] %>
+								    <%if url%>
+									  <td id="date_<%=i%>" class="<%= highlight_class[i] %>"><%=url%></td>
+								    <%else%>
+									  <td id="date_<%=i%>" class="<%= highlight_class[i] %>"><%=i%></td>
+								    <%end%>
+								  <% elsif highlight_today and today?(i)%>
 										<%url = dates[i] %>
 										<%if url%>
 											<td id="date_<%=i%>" class="today"><%=url%></td>

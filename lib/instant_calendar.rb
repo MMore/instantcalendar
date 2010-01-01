@@ -5,6 +5,7 @@ module InstantCalendar
 									{:month => options[:month] || Time.now.month,
 									 :year => options[:year] || Time.now.year,
 									 :highlight_today => options[:highlight_today] || false,
+									 :highlight_class => options[:highlight_class] || {},
 									 :dates => options[:dates]	|| [],
 									 :highlight_dates => options[:highlight_dates]	|| []
                   }
